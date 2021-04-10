@@ -6,7 +6,8 @@
     "node": "12.22.1"
   },
   "scripts": {
-    "start": "nodemon .",
+    "dev": "nodemon .",
+    "start": "node index.js",
     "build": "babel --delete-dir-on-start --out-dir dist --copy-files --ignore \"**/__tests__/**,**/__mocks__/**\" --no-copy-ignored src"
   },
   "license": "MIT",
