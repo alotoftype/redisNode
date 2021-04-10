@@ -1,10 +1,12 @@
 import express from "express"
 
-export default function getRoutes(){
+export function getRoutes(){
   const router = express.Router()
-  router.use('/welcome', async(req, res) =>{
-    res.status(200).send('Hello');
-  })
+  router.use('/', welcome)
   return router
 }
 
+
+async function welcome(req, res) {
+  res.status(200).send({ "message": "ok"})
+}
