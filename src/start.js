@@ -6,10 +6,11 @@ import {getRoutes} from "./routes";
 
 function startServer({port = process.env.PORT} = {}){
   const app = express()
+  app.use("/api", getRoutes())
   app.use("/", async(req, res)=>{
     res.status(200).send({ "message":"Lets Get started"})
   })
-  app.use("/api", getRoutes())
+  
   app.use(errorMiddleware)
 
   return new Promise(resolve => {
